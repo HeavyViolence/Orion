@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Orion.Auxiliary.Configs
 {
     [CreateAssetMenu(fileName = "Gradient config",
-                     menuName = "Orion/Configs/Gradient config")]
+                     menuName = "Orion/Configs/General/Gradient config")]
     public sealed class GradientConfig : ScriptableObject
     {
         [SerializeField]

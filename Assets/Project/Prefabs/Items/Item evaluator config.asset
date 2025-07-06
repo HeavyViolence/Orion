@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65351257462e1442b19fe19192ae468, type: 3}
+  m_Name: Item evaluator config
+  m_EditorClassIdentifier: 
+  _tierColorCodes:
+  - {fileID: 11400000, guid: 2b9f6bcaa49703045969688e11b3fc23, type: 2}
+  - {fileID: 11400000, guid: 45707d4405b322046b0f80e406e458d9, type: 2}
+  - {fileID: 11400000, guid: 80fe2d0f026e4d24c838aa0960566aa6, type: 2}
+  - {fileID: 11400000, guid: 41e68aea2d72d7d4b9d832b37ef9906b, type: 2}
+  - {fileID: 11400000, guid: ce911b981e3b19340b0fce92ead703b8, type: 2}
+  - {fileID: 11400000, guid: 2646e6a2baa5ccb418a07770b835e829, type: 2}
+  - {fileID: 11400000, guid: 2ee192f3c55f9974aa2dc7924be0c707, type: 2}
+  _powerDistribution: {fileID: 11400000, guid: adb8dbf5b3381b145a662637e28711b1, type: 2}
+  _spawnProbability: {fileID: 11400000, guid: bd2a6d9319417714081188ffdff949d5, type: 2}

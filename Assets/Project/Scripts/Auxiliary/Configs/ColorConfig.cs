@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Orion.Auxiliary.Configs
 {
     [CreateAssetMenu(fileName = "Color config",
-                     menuName = "Orion/Configs/Color config")]
+                     menuName = "Orion/Configs/General/Color config")]
     public sealed class ColorConfig : ScriptableObject
     {
         [SerializeField]
