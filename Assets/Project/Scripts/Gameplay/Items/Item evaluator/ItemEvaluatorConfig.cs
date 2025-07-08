@@ -63,11 +63,30 @@ namespace Orion.Gameplay.Items
 
         public Tier GetRandomTier() => MyMath.RandomEnum<Tier>();
 
+        public IEnumerable<Tier> GetRandomTiers(int amount) => MyMath.RandomEnum<Tier>(amount);
+
         public Tier GetProbableTier()
         {
             float mappedSeed = _spawnProbability.Evaluate(MyMath.RandomUnit);
             int tierCode = _tiersAmount - 1 - Mathf.RoundToInt(mappedSeed * (_tiersAmount - 1));
             return (Tier)tierCode;
+        }
+
+        public IEnumerable<Tier> GetProbableTiers(int amount)
+        {
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException($"{nameof(amount)} must be positive!");
+            }
+
+            List<Tier> result = new(amount);
+
+            for (int i = 0; i < _tiersAmount; i++)
+            {
+                result.Add(GetProbableTier());
+            }
+
+            return result;
         }
 
         public Color32 GetTierColorCode(Tier tier) => _tiersDataCache[tier].ColorCode;

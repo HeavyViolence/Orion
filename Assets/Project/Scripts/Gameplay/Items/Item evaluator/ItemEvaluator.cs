@@ -1,6 +1,7 @@
 using Orion.Auxiliary;
 
 using System;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -21,7 +22,11 @@ namespace Orion.Gameplay.Items
         }
 
         public Tier GetRandomTier() => _config.GetRandomTier();
+        public IEnumerable<Tier> GetRandomTiers(int amount) => _config.GetRandomTiers(amount);
+
         public Tier GetProbableTier() => _config.GetProbableTier();
+        public IEnumerable<Tier> GetProbableTiers(int amount) => _config.GetProbableTiers(amount);
+
         public Color32 GetTierColorCode(Tier tier) => _config.GetTierColorCode(tier);
 
         public int EvalueateProperty(Vector2Int range, Tier tier, ItemPropertyEvaluation evaluation)

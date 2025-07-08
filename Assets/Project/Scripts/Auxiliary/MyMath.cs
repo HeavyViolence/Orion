@@ -1,5 +1,5 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace Orion.Auxiliary
 {
@@ -13,9 +13,28 @@ namespace Orion.Auxiliary
         public static T RandomEnum<T>() where T : Enum
         {
             T[] values = (T[])Enum.GetValues(typeof(T));
-            int seed = UnityEngine.Random.Range(0, values.Count());
+            int seed = UnityEngine.Random.Range(0, values.Length);
 
             return values[seed];
+        }
+
+        public static IEnumerable<T> RandomEnum<T>(int amount) where T : Enum
+        {
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException($"{nameof(amount)} must be positive!");
+            }
+
+            T[] values = (T[])Enum.GetValues(typeof(T));
+            List<T> result = new(amount);
+
+            for (int i = 0; i < amount; i++)
+            {
+                int seed = UnityEngine.Random.Range(0, values.Length);
+                result.Add(values[seed]);
+            }
+
+            return result;
         }
     }
 }
