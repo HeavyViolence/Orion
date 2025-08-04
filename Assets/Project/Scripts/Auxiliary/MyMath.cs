@@ -6,9 +6,11 @@ namespace Orion.Auxiliary
     public static class MyMath
     {
         public static float RandomNormal => UnityEngine.Random.Range(-1f, 1f);
-        public static float RandomUnit => UnityEngine.Random.Range(0f, 1f);
+        public static float RandomUnit => UnityEngine.Random.value;
         public static bool RandomBool => RandomNormal > 0f;
         public static float RandomSign => RandomBool ? 1f : -1f;
+
+        #region enums
 
         public static T RandomEnum<T>() where T : Enum
         {
@@ -36,5 +38,7 @@ namespace Orion.Auxiliary
 
             return result;
         }
+
+        #endregion
     }
 }
